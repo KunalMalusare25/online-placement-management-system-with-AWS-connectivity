@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 500;
+}
+body {
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 10%;
+    
+    /* background-color: aqua; */
+    background-position: center;
+    background-size: cover;
+    background-image: url(https://images.unsplash.com/photo-1554034483-04fda0d3507b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+}
+.main {
+
+    background-color: red;
+    max-width: 600px;
+    margin: 0 auto;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+.card {
+    margin: 0 0 20px;
+    padding: 15px;
+    border: 2px solid #3498db;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    
+}
+.card a {
+    text-decoration: none;
+    color: #2c3e50;
+}
+
+.card:hover {
+    background-color: #ecf0f1;
+}
+
+.ri-arrow-left-double-line{
+    position: absolute;
+    margin-bottom: 10%;
+    margin-left: -18%;
+    
+    }
+

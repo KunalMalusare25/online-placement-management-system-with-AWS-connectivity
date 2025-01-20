@@ -1,0 +1,75 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'studentAfter1.css' %}">
+    
+</head>
+<body>
+    <header>
+        <h1>Welcome {{request.user.first_name}} !</h1>
+    </header>
+    <div class="container">
+        <div class="logo">
+            <a href="{% url 'sdash' %}">
+            <button class="button"> Home </button>
+            </a>
+        </div>
+        <div class="logout">
+            <a href="{% url 'index' %}">
+                <button class="button"> Logout </button>
+                </a>
+        </div>
+    </div>
+
+    <div class="dashboard">
+        <div class="dashboard-item">
+            <i class="fa fa-user"></i> 
+            <a href="{%url 'profile'%}"><b><u>Profile</u></b></a>
+        </div>
+        <div class="dashboard-item">                                
+            <i class="fa fa-briefcase"></i> 
+            <a href="{%url 'jobapplied'%}"><b><u>Job Applied</b></u></a>
+        </div>
+        <div class="dashboard-item">
+            <i class="fa fa-newspaper"></i> 
+            <a href="{%url 'tpopost'%}"><b><u>TPO Posts</b></u></a>
+        </div>
+        {% comment %} <div class="dashboard-item">
+            <i class="fa fa-file"></i> 
+            <a href="{%url 'resume'%}"><b><u>Resume</b></u></a>
+            
+        </div> {% endcomment %}
+        <div class="dashboard-item">
+            <i class="fa fa-question-circle"></i> 
+            <a href="https://www.kjei.edu.in/tcoer/training-and-dplacement.php"><b><u>Help!</b></u></a>
+        </div>
+    </div>
+    <div class="lower">
+        <div class="cards" id="c1">
+            <u> <b> Important Message </b> </u>
+            <div class="scrollable-container">
+                <div class="notice-container">
+                    {% for notice in notices %}
+                    <div class="cookieCard">
+                        <label>Company Name - </label>
+                        <p class="cookieHeading">{{ notice.comname }}</p>
+                        <br>
+                        <label>Time -</label>
+                        <p class="cookieHeading">{{ notice.duration }}</p>
+                        <br>
+                        <label>Round -</label>
+                        <p class="cookieHeading">{{ notice.rounds }}</p>
+                        <br>
+                        <br>
+                        <p class="cookieDescription">{{ notice.created_at }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html> 
+ 

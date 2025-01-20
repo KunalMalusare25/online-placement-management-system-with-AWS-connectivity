@@ -1,0 +1,146 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+    height: 100vh;
+    /* background-color: #F6F4EB; */
+    display: flex;
+    background-image: url(https://images.unsplash.com/photo-1554034483-04fda0d3507b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+}
+
+.container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    
+}
+.left{
+    padding-top: 80px;
+    width: 60%;
+    height: 100%;
+    display: flex;
+  margin-left: 10%;
+ 
+    
+    
+}
+
+.left1{
+   
+    width: 25%;
+    height: 30%;
+    margin-left: 10px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center; 
+    
+    
+    
+      
+}
+
+#img{
+    cursor: pointer;
+    text-align: center;
+    margin-top: 100%;
+    margin-right: 150%;
+    font-size: 0.60rem;
+}
+
+
+
+.left2{
+    margin-left: 10%;
+    width: 70%;
+    
+    /* margin-top: -25%; */
+    
+    
+
+}
+
+.right{
+    padding-top: 65px;
+    width: 50%;
+    margin-left: 70%;
+    margin-top: -77%;
+  
+    
+
+}
+
+h2{
+    position: absolute;
+    font-weight: 200; 
+    margin-left: 20px;
+}
+
+input{
+    margin-bottom: 25px;
+    margin-left: 40%;
+    height: 30px;
+    width: 40%;
+    text-align: center;
+    border-radius: 5px;
+    border: none;
+
+}
+
+#btn {
+    bottom: 80px;
+    position: absolute;
+    display: inline-block;
+    left: 45%;
+    background: linear-gradient(to bottom, #1b1c3f, #4a4e91);
+   /* Gradient background */
+    color: white;
+   /* White text color */
+    font-family: "Segoe UI", sans-serif;
+   /* Stylish and legible font */
+    font-weight: bold;
+    font-size: 18px;
+   /* Large font size */
+    border: none;
+   /* No border */
+    border-radius: 30px;
+   /* Rounded corners */
+    padding: 25px 40px;
+   /* Large padding */
+    cursor: pointer;
+   /* Cursor on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+   /* Subtle shadow */
+    animation: button-shimmer 2s infinite;
+    transition: all 0.3s ease-in-out;
+   /* Smooth transition */
+
+  }
+  
+  /* Hover animation */
+  #btn:hover {
+    background: linear-gradient(to bottom, #2c2f63, #5b67b7);
+    animation: button-particles 1s ease-in-out infinite;
+    transform: translateY(-2px);
+  }
+  
+  /* Click animation */
+  #btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+  .ri-arrow-left-double-line{
+    margin-left: 8%;
+    margin-top: 30px;
+    position: absolute;
+    color: #000;
+  }
+
+
+
+
+
+
+  

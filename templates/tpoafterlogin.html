@@ -1,0 +1,48 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'tpoafterlogin1.css' %}">
+    
+</head>
+<body>
+    <header>
+        <h1>Welcome TPO !</h1>
+    </header>
+    <div class="container">
+        <div class="logo">
+            <a href="{% url 'tpoafterlogin' %}">
+                <button class="button"> Home </button>
+                </a>
+        </div>
+        <div class="logout">
+            <a href="{% url 'index' %}">
+                <button class="button"> Logout </button>
+                </a>
+        </div>
+    </div>
+
+    <div class="dashboard">
+        <div class="dashboard-item">
+            <i class="fa fa-user"></i> 
+            <a href="{% url 'register'%}"><b><u>Company Registration</b></u></a>
+        </div>
+        <div class="dashboard-item">
+            <i class="fa fa-briefcase"></i> 
+            <a href="{% url 'joblist'%}"><b><u>Important Notice</b></u></a>
+        </div>
+        <div class="dashboard-item">                                                        
+            <i class="fa fa-newspaper"></i> 
+            <a href="{% url 'tpoappstud'%}"><b><u>Applied Students Details</b></u></a>
+        </div>
+        <div class="dashboard-item">
+            <i class="fa fa-file"></i> 
+            <a href="{% url 'studentprofiles'%}"><b><u>Student profiles</b></u></a>
+        </div>
+        
+    </div>
+
+    
+</body>
+</html> 
+ 

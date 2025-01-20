@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>applied Student Details</title>
+    <link rel="stylesheet" href="{% static 'appstud.css' %}"> 
+</head>
+<body>
+    <a href="#">
+        <i class="ri-arrow-left-double-line"> 
+        </i>
+    </a>
+    <h1 id="rep">Student Applied List</h1>
+    <form method="post" enctype="multipart/form-data"> <!-- Form start -->
+        {% csrf_token %}
+    <table id="driveTable">
+        <thead>
+            <tr>
+                <th>Sr.No.</th>
+                <th>Company Name</th>
+                <th>Excel File</th>
+                <th>Share</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            
+            {% for company in companies %}
+            <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ company }}</td>
+            <td><input type="file" name="excel_file_{{ company.id }}" accept=".xlsx, .xls"></td>
+            <input type="hidden" name="company_id_{{ company.id }}" value="{{ company.id }}">
+            <td>
+            {% for uploaded_file in company.uploaded_files.all %}
+            <a href="{{ uploaded_file.excel_file.url }}" download>{{ uploaded_file.excel_file.name }}</a>
+            {% endfor %}
+            </td>
+            <td><button type="submit">Upload File</button></td>
+            </tr>
+            {% endfor %}
+
+            
+            <!-- Dynamic rows will be added here -->
+        </tbody>
+    </table>
+</form>
+</body>
+</html>

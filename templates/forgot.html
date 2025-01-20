@@ -1,0 +1,59 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css">
+  <link rel="stylesheet" href="{% static 'studentlogin.css' %}">
+</head>
+<body>
+  <div class="form-container">
+
+    <p class="title">OOP's you forgot password</p>
+    <form class="form" method="POST" name="changepassword" onsubmit="return checkpassword()">
+      {% csrf_token %}
+      <input type="password" class="input" placeholder="your current password" name="oldpassword" required>
+      <input type="password" class="input" placeholder="Enter new password" name=" newpassword" required>
+      <input type="password" class="input" placeholder=" Confirm Password" name=" confirmpassword" required>
+
+      <button type="submit" class="submit">Submit</button>
+    </form>
+    
+  </div>
+
+  {% if error == "no" %}
+      <script>
+          alert('Wow Password Change Successfully');
+          window.location=('{% url 'login' %}');
+      </script>
+  {% endif %}
+      
+  {% if error == "yes" %}
+    <script>
+        alert('Something went wrong , try again later');
+    </script>
+  {% endif %}
+    
+  {% if error == "not" %}
+    <script>
+        alert('Your current password is wrong');
+    </script>
+  {% endif %}
+  
+      <script>
+        function checkpassword(){
+        if(document.changepassword.newpassword.value!=document.changepassword.confirmpassword.value){
+        alert('New Password and Confirm Password field does not Match');
+        document.changepassword.confirmpassword.focus();
+        return false;
+        }
+        return true;
+        }
+    </script>
+</body>
+
+</html>
+
+    

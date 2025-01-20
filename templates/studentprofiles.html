@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>applied Student Details</title>
+    <link rel="stylesheet" href="{% static 'studpro.css' %}"> 
+</head>
+<body>
+    <a href="#">
+        <i class="ri-arrow-left-double-line"> 
+        </i>
+    </a>
+    <h1 id="rep">Students Profile</h1>
+  
+    <table id="driveTable">
+        <thead>
+            <tr>
+                <th>Sr.No.</th>
+                <th>Idcode</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                
+                <th>College Name</th>
+                <th>Department</th>
+                <th>Contact Number</th>
+                {% comment %} <th>SSC Marks</th>
+                <th>HSC/Diploma marks</th>
+                <th>BE Marks</th>
+                <th>Year of passing</th>
+                <th>Skills</th>
+                <th>Resume</th> {% endcomment %}
+                
+
+            </tr>
+        </thead>
+        <tbody>
+            {%for stuprofile in queryset %}
+            <tr>
+            <td>{{stuprofile.user.id}}</td>
+            
+            <td>{{stuprofile.idcode}}</td>
+            <td>{{stuprofile.user.first_name}}</td>
+            <td>{{stuprofile.user.last_name}}</td>
+            <td>{{stuprofile.user.username}}</td>
+            <td>{{stuprofile.CollegeName}}</td>
+            <td>{{stuprofile.Department}}</td>
+            <td>{{stuprofile.ContactNo}}</td>
+            </tr>
+            {%endfor %}
+            
+            {% comment %} <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td> {% endcomment %}
+            
+            <!-- Dynamic rows will be added here -->
+        </tbody>
+    </table>
+</body>
+</html>
